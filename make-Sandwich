@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -x
+
+rm Sandwich.pdf 
+xelatex -interaction=nonstopmode Sandwich.tex 
+# uh, ya, for ToC or set up real system...
+xelatex -interaction=nonstopmode Sandwich.tex 
+rm Sandwich-thumbnail.pdf
+xelatex -interaction=nonstopmode Sandwich-thumbnail.tex
+#evince Sandwich-thumbnail.pdf Sandwich.pdf &
+
+evince Sandwich.pdf &
+
+echo
+
+exit 0
+
